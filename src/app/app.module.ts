@@ -5,7 +5,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
+
+import { RollbarService, rollbarFactory, RollbarErrorHandler } from './rollbar';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { NgModule } from '@angular/core';
     FlexModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: ErrorHandler, useClass: RollbarErrorHandler },
+    { provide: RollbarService, useFactory: rollbarFactory }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
