@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import xml2js from 'xml2js';
 import { WordpressService } from './services/wordpress.service';
@@ -17,19 +17,28 @@ import * as Rollbar from 'rollbar'; // When using Typescript < 3.6.0.
 })
 export class AppComponent {
   posts$: Observable<any[]>;
+  pages$: Observable<any[]>;
   feed$: Observable<string>;
   title: string;
   description: string;
+  listPages: Array<string>;
 
   constructor(
     private wp: WordpressService,
     @Inject(RollbarService) private rollbar: Rollbar
   ) {
 
+    // Define wordpress calls to service
     this.posts$ = this.wp.getPosts();
+    this.pages$ = this.wp.getPages();
     this.feed$ = this.wp.getFeed();
     this.title = "DrewSwanner.com";
     this.description = "";
+
+    this.listPages = new Array();
+  }
+
+  ngOnInit() {
 
     let curThis = this;
 
@@ -43,12 +52,14 @@ export class AppComponent {
         curThis.title = result.rss.channel[0].title[0];
         curThis.description = result.rss.channel[0].description[0];
       });
-
     });
 
-    this.posts$.forEach((res) => {
-      console.log(res);
+    this.pages$.forEach((post) => {
+      //curThis.listPages.push(post[0].slug);
+      curThis.listPages.push(post[0].title.rendered);
     });
+
+
   }
 
   rollbarInfo() {

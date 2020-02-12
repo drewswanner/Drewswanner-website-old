@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatCardModule, MatButtonModule } from '@angular/material';
+import { MatToolbarModule, MatMenuModule, MatCardModule, MatButtonModule } from '@angular/material';
 
 const materialModules = [
     MatToolbarModule,
+    MatMenuModule,
     MatCardModule,
     MatButtonModule,
 ];
@@ -11,4 +12,4 @@ const materialModules = [
     imports: materialModules,
     exports: materialModules
 })
-export class AppMaterialModule { }
+export class MaterialModule { }
