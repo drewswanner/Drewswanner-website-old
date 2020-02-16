@@ -25,11 +25,17 @@ export class WordpressComponent implements OnInit {
     private router: Router,
   ) {
 
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    }
+
     // Define wordpress calls to service
     this.pages$ = this.wp.getPages();
 
     // get currently sellected page
     this.currentPage = this.route.snapshot.paramMap.get('id') == null ? "2" : this.route.snapshot.paramMap.get('id'); // Default page
+
+    this.content = "";
 
   }
 
@@ -37,10 +43,15 @@ export class WordpressComponent implements OnInit {
 
     // Loop over the pages from wordpress api
     this.pages$.forEach((page) => {
-      if (this.currentPage == page[0].id) {
-        this.content = page[0].content.rendered;
-        console.log(page[0].content.rendered);
-      }
+
+      page.forEach((tab) => {
+
+        if (this.currentPage == tab.id) {
+          this.content = tab.content.rendered;
+        }
+
+      });
+
     });
   }
 

@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+    db:
+        image: db:debug
+        volumes:
+            - /Volumes/MemStore/DB:/var/lib/mysql
+        build:
+            context: Mysql/
+            dockerfile: Dockerfile-DB
+
+        networks:
+            test_net:
+                ipv4_address: 172.28.3.1
+        environment:
+            NODE_ENV: debug
+            MYSQL_ROOT_PASSWORD: P2smo1G92Jc3H9H8
+        ports:
+            - 3306:3306
+        expose: 
+            - 3306/tcp
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+    
+    wordpress:
+        image: wordpress
+        restart: always
+        ports:
+            - 8080:80
+        environment:
+            WORDPRESS_DB_HOST: 172.28.3.1
+            WORDPRESS_DB_USER: root
+            WORDPRESS_DB_PASSWORD: P2smo1G92Jc3H9H8
+            WORDPRESS_DB_NAME: wp_exampledb
+        volumes:
+            - Wordpress:/var/www/html
+
+volumes:
+  wordpress:
+  db:
+
+networks:
+    test_net:
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.28.3.0/16
