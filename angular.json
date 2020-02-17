@@ -23,14 +23,20 @@
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
-                        "deployUrl": "public_html/",
+                        //"deployUrl": "public_html/",
                         "aot": false,
                         "assets": [
                             "src/favicon.ico",
-                            "src/assets", {
+                            "src/assets",
+                            {
                                 "glob": "**/*",
                                 "input": "wordpress/",
                                 "output": "csm"
+                            },
+                            {
+                                "glob": "wp-config.php",
+                                "input": "",
+                                "output": "csm/"
                             }
                         ],
                         "styles": [
