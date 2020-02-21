@@ -47,7 +47,7 @@ export class WordpressComponent implements OnInit {
       page.forEach((tab) => {
 
         if (this.currentPage == tab.id) {
-          this.content = tab.content.rendered;
+          this.content = tab.content.rendered.replace(/&quot;/g, '');
         }
 
       });

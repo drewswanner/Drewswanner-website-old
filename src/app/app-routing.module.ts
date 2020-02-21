@@ -6,6 +6,10 @@ import { WordpressComponent } from './wordpress/wordpress.component';
 const routes: Routes = [
   // Here are the routes to the WordpressComponent
   {
+    path: 'page',
+    component: WordpressComponent
+  },
+  {
     path: 'page/:id',
     component: WordpressComponent
   },
