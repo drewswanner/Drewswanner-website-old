@@ -27,10 +27,16 @@
                         "aot": false,
                         "assets": [
                             "src/favicon.ico",
-                            "src/assets", {
+                            "src/assets",
+                            {
                                 "glob": "**/*",
-                                "input": "wordpress/",
+                                "input": "wp/",
                                 "output": "csm"
+                            },
+                            {
+                                "glob": "wp-config.php",
+                                "input": "",
+                                "output": "csm/"
                             }
                         ],
                         "styles": [
