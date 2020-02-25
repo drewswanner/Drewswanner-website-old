@@ -23,7 +23,7 @@
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
-                        "deployUrl": "public_html/",
+                        //"deployUrl": "public_html/",
                         "aot": false,
                         "assets": [
                             "src/favicon.ico",
