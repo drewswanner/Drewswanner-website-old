@@ -30,7 +30,7 @@
                             "src/assets",
                             {
                                 "glob": "**/*",
-                                "input": "wordpress/",
+                                "input": "wp/",
                                 "output": "csm"
                             },
                             {
@@ -79,7 +79,8 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "DrewSwanner:build"
+                        "browserTarget": "DrewSwanner:build",
+                        "sourceMap": false
                     },
                     "configurations": {
                         "production": {

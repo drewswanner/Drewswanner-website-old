@@ -1,7 +1,4 @@
-import * as Rollbar from 'rollbar'; // When using Typescript < 3.6.0.
-// `import Rollbar from 'rollbar';` is the required syntax for Typescript 3.6.x. 
-// However, it will only work when setting either `allowSyntheticDefaultImports` 
-// or `esModuleInterop` in your Typescript options.
+import Rollbar from 'rollbar';
 
 import {
     Injectable,
