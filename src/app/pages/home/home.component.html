@@ -1,0 +1,42 @@
+<!--<eval-component *ngIf="pageText" [template]="pageText" [data]="context"></eval-component>-->
+<main id="main" class="page-home no-spacing">
+    <div class="hero d-flex flex-column justify-content-center align-items-center">
+        <h1 class="title">{{title}}</h1>
+        <h2 class="subtitle">
+            < Software Developer>
+        </h2>
+    </div>
+    <!-- <div class="full-bg-img" style="background-image: url(http://king.rocks/wp-content/uploads/2018/05/abstract-darkened.jpg);"></div> -->
+
+    <a [ngx-scroll-to]="'#intro'" [ngx-scroll-to-offset]="-100">
+        <div class="hero-container">
+            <div class="hero-slide">
+                <div class="container flex-center">
+                    <div class="row pt-5 mt-3">
+                        <div class="col-md-12 mb-3">
+                            <div class="intro-info-content text-center">
+                                <h1 id="main-title" class="display-3 font-bold mb-5 text-white wow bounceInDown" data-wow-delay="0.3s">
+                                    <span class="d-none">Drew Swanner</span><span id="main-title-display"></span></h1>
+                                <h2 id="sub-title" class="font-up mb-5 mt-1 font-bold text-white" data-wow-delay="0.3s">
+                                    <span class="d-none">Software Developer</span><span id="sub-title-display"></span>
+                                </h2>
+                                <div class="typed-container d-none" aria-hidden="true">
+                                    <div id="main-title-text"><span>Drew Swanner</span></div>
+                                    <div id="sub-title-text">
+                                        <p>I am a Backend Developer</p>
+                                        <p>I am a Frontend Developer</p>
+                                        <p>I am a Unix Administrator</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <div class="page container">
+
+    </div>
+</main>

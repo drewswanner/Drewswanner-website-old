@@ -1,0 +1,56 @@
+main#main {
+  background-position: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  h1 {
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+.hero-slide {
+  width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+
+  .control-arrow {
+    color: #fff;
+    position: absolute;
+    bottom: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 200%;
+  }
+}
+
+#main-title,
+#sub-title,
+.control-arrow {
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+#sub-title-display {
+  font-size: 1.5rem;
+}
+
+.cta-buttons {
+  .btn {
+    background: rgba(245, 25, 0, 0.8);
+    border: 1px #fff solid;
+
+    &:hover {
+      color: #fff;
+      background: rgba(245, 25, 0, 1);
+    }
+  }
+}
+
+.content {
+  background: #fff;
+}
+
+.card-image {
+  background-position: center center;
+}

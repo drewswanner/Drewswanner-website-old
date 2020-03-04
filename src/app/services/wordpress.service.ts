@@ -10,7 +10,7 @@ export class WordpressService {
   constructor(private http: HttpClient) { }
 
   getPosts(): Observable<any[]> {
-    return this.http.get<any[]>('https://drewswanner.com/csm/?rest_route=/wp/v2/posts', {
+    return this.http.get<any[]>('https://drewswanner.com/?rest_route=/wp/v2/posts', {
       params: {
         per_page: '6'
       }
@@ -18,7 +18,7 @@ export class WordpressService {
   }
 
   getPages(): Observable<any[]> {
-    return this.http.get<any[]>('https://drewswanner.com/csm/?rest_route=/wp/v2/pages', {
+    return this.http.get<any[]>('https://drewswanner.com/?rest_route=/wp/v2/pages', {
       params: {
         per_page: '6'
       }
@@ -26,6 +26,6 @@ export class WordpressService {
   }
 
   getFeed(): Observable<string> {
-    return this.http.get('https://drewswanner.com/csm/?feed=rss2', { responseType: 'text' });
+    return this.http.get('https://drewswanner.com/?feed=rss2', { responseType: 'text' });
   }
 }

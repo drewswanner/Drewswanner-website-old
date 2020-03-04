@@ -1,35 +1,29 @@
-import { AppComponent } from './app.component';
-import { MaterialModule } from './material.module';
+import { BrowserModule, Title } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Http } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
+import { httpInterceptorProviders } from './http-interceptors';
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
-import { FlexModule } from '@angular/flex-layout';
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule, ErrorHandler } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { RollbarService, rollbarFactory, RollbarErrorHandler } from './rollbar';
-import { WordpressComponent } from './wordpress/wordpress.component';
-
+import { AppComponent } from './app.component';
+import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    WordpressComponent
-  ],
+  declarations: [AppComponent],
   imports: [
-    MaterialModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
     BrowserModule,
-    CommonModule,
-    FlexModule,
-    HttpClientModule
+    FormsModule,
+    HttpClientModule,
+    ScrollToModule.forRoot(),
+    MDBBootstrapModule.forRoot(),
+    AppRoutingModule
   ],
-  providers: [
-    { provide: ErrorHandler, useClass: RollbarErrorHandler },
-    { provide: RollbarService, useFactory: rollbarFactory }
-  ],
+  exports: [FormsModule],
+  providers: [httpInterceptorProviders, Title],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
