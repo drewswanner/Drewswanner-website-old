@@ -4,13 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import {
-  RECAPTCHA_SETTINGS,
-  RecaptchaSettings,
-  RecaptchaLoaderService,
-  RecaptchaModule,
-  RecaptchaFormsModule
-} from 'ng-recaptcha';
+// import {
+//   RECAPTCHA_SETTINGS,
+//   RecaptchaSettings,
+//   RecaptchaLoaderService,
+//   RecaptchaModule,
+//   RecaptchaFormsModule
+// } from 'ng-recaptcha';
 
 import { EvalComponentModule } from 'projects/eval-component/src/public_api';
 // import { EvalComponentModule } from 'eval-component';
@@ -32,7 +32,7 @@ import { WpPostComponent } from './pages/wp-post/wp-post.component';
 import { WpListPostsComponent } from './pages/wp-list-posts/wp-list-posts.component';
 
 // WpResolver service which retrieves the data from Wordpress REST endpoints
-import { WpResolver } from './services/wp-resolver.service';
+//import { WpResolver } from './services/wp-resolver.service';
 import { generateTitle } from './services/head.service';
 
 // Route definitions
@@ -40,7 +40,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    resolve: { pages: WpResolver },
+    //resolve: { pages: WpResolver },
     // Data is passed to the WpResolver and component itself, check WpResolver
     // for more info
     data: {
@@ -56,7 +56,7 @@ const routes: Routes = [
   {
     path: 'blog',
     component: WpListPostsComponent,
-    resolve: { posts: WpResolver },
+    //resolve: { posts: WpResolver },
     data: {
       url: 'posts',
       setParams: {
@@ -70,7 +70,7 @@ const routes: Routes = [
   {
     path: 'services',
     component: WpPageComponent,
-    resolve: { pages: WpResolver },
+    //resolve: { pages: WpResolver },
     data: {
       url: 'pages',
       setParams: {
@@ -82,7 +82,7 @@ const routes: Routes = [
   {
     path: 'contact',
     component: WpPageComponent,
-    resolve: { pages: WpResolver },
+    //resolve: { pages: WpResolver },
     data: {
       url: 'pages',
       setParams: {
@@ -94,7 +94,7 @@ const routes: Routes = [
   {
     path: 'page/:slug',
     component: WpPageComponent,
-    resolve: { pages: WpResolver },
+    //resolve: { pages: WpResolver },
     data: {
       url: 'pages',
       setParams: {
@@ -108,7 +108,7 @@ const routes: Routes = [
   {
     path: 'post/:slug',
     component: WpPostComponent,
-    resolve: { posts: WpResolver },
+    //resolve: { posts: WpResolver },
     data: {
       url: 'posts',
       setParams: {
@@ -122,7 +122,7 @@ const routes: Routes = [
   {
     path: 'projects',
     component: WpListPostsComponent,
-    resolve: { posts: WpResolver },
+    //resolve: { posts: WpResolver },
     data: {
       url: 'posts',
       setParams: {
@@ -144,9 +144,9 @@ const routes: Routes = [
 
 ];
 
-const recaptchaSettings: RecaptchaSettings = {
-  siteKey: '6LdhCOgUAAAAAOBI3B8niYc76BeDN8jfgopsPOtt'
-};
+// const recaptchaSettings: RecaptchaSettings = {
+//   siteKey: '6LdhCOgUAAAAAOBI3B8niYc76BeDN8jfgopsPOtt'
+// };
 
 @NgModule({
   imports: [
@@ -157,7 +157,7 @@ const recaptchaSettings: RecaptchaSettings = {
     EvalComponentModule,
     MDBBootstrapModule,
     RouterModule.forRoot(routes),
-    RecaptchaModule.forRoot(),
+    //RecaptchaModule.forRoot(),
     // RecaptchaFormsModule
   ],
   exports: [RouterModule, FormsModule],
@@ -174,11 +174,11 @@ const recaptchaSettings: RecaptchaSettings = {
     ContactFormComponent
   ],
   providers: [
-    WpResolver,
-    {
-      provide: RECAPTCHA_SETTINGS,
-      useValue: recaptchaSettings
-    }
+    // WpResolver,
+    // {
+    //   provide: RECAPTCHA_SETTINGS,
+    //   useValue: recaptchaSettings
+    // }
   ],
   schemas: [
     /* NO_ERRORS_SCHEMA */
