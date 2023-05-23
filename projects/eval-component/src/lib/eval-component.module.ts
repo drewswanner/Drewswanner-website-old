@@ -5,10 +5,9 @@ import { createCustomElement } from '@angular/elements';
 import { EvalComponentComponent } from './eval-component.component';
 
 @NgModule({
-  imports: [BrowserModule],
-  declarations: [EvalComponentComponent],
-  exports: [EvalComponentComponent],
-  entryComponents: [EvalComponentComponent]
+    imports: [BrowserModule],
+    declarations: [EvalComponentComponent],
+    exports: [EvalComponentComponent]
 })
 export class EvalComponentModule {
   constructor(private injector: Injector) {}

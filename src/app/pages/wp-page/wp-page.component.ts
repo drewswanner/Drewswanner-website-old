@@ -1,7 +1,10 @@
-import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone, Directive as  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HeadService } from 'src/app/services/head.service';
 
+@()
+@()
+@Directive()
 @Component({
   selector: 'app-wp-page',
   templateUrl: './wp-page.component.html',

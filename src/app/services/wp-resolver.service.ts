@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  Router,
-  Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot
-} from '@angular/router';
+import { Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
@@ -15,7 +10,7 @@ import { WpService } from './wp.service';
  */
 
 @Injectable()
-export class WpResolver implements Resolve<any> {
+export class WpResolver  {
   private dataCache: any = {}; //Cache for reloading pages one has been to
 
   constructor(private wp: WpService, private router: Router) {}

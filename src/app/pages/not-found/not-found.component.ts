@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Directive as  } from '@angular/core';
 import { Location } from '@angular/common';
 
+@()
+@()
+@Directive()
 @Component({
   selector: 'app-not-found',
   templateUrl: './not-found.component.html',

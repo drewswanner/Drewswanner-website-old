@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync as  } from '@angular/core/testing';
 
 import { WpPageComponent } from './wp-page.component';
 
@@ -7,7 +7,7 @@ describe('WpPageComponent', () => {
   let fixture: ComponentFixture<WpPageComponent>;
 
   beforeEach(
-    async(() => {
+    waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [WpPageComponent]
       }).compileComponents();

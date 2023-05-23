@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  AfterViewInit,
-  NgZone,
-  ChangeDetectorRef
-} from '@angular/core';
+import { Component, OnInit, AfterViewInit, NgZone, ChangeDetectorRef, Directive as  } from '@angular/core';
 import {
   Router,
   ActivatedRoute,
@@ -15,6 +9,9 @@ import {
 import { filter } from 'rxjs/operators';
 import { WpService } from 'src/app/services/wp.service';
 
+@()
+@()
+@Directive()
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
