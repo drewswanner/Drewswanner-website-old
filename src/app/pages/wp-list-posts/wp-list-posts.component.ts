@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Directive as  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+@()
+@()
+@Directive()
 @Component({
   selector: 'app-wp-list-posts',
   templateUrl: './wp-list-posts.component.html',

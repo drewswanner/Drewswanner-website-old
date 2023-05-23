@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Directive as  } from '@angular/core';
 
+@()
+@()
+@Directive()
 @Component({
   selector: 'list-replies',
   templateUrl: './list-replies.component.html',

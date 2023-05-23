@@ -156,7 +156,7 @@ const recaptchaSettings: RecaptchaSettings = {
     ScrollToModule,
     EvalComponentModule,
     MDBBootstrapModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {}),
     RecaptchaModule.forRoot(),
     // RecaptchaFormsModule
   ],
