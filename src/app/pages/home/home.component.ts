@@ -1,12 +1,10 @@
-import { Component, OnInit, OnDestroy, AfterContentInit, Directive as  } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterContentInit, Directive } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import Typed from 'typed.js';
 
 import { WpService } from 'src/app/services/wp.service';
 import { HeadService } from 'src/app/services/head.service';
 
-@()
-@()
 @Directive()
 @Component({
   selector: 'app-home',

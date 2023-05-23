@@ -1,7 +1,5 @@
-import { Component, OnInit, Input, Directive as  } from '@angular/core';
+import { Component, OnInit, Input, Directive } from '@angular/core';
 
-@()
-@()
 @Directive()
 @Component({
   selector: 'list-replies',

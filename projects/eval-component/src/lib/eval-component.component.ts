@@ -1,6 +1,5 @@
-import { Component, Input, AfterViewInit, Compiler, COMPILER_OPTIONS, CompilerFactory, OnDestroy, OnChanges, NgModule, NgZone, ViewChild, ViewContainerRef, ViewEncapsulation, Directive as  } from '@angular/core';
+import { Component, Input, AfterViewInit, Compiler, COMPILER_OPTIONS, CompilerFactory, OnDestroy, OnChanges, NgModule, NgZone, ViewChild, ViewContainerRef, ViewEncapsulation, Directive  } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { JitCompiler } from '@angular/compiler';
 import { JitCompilerFactory } from '@angular/platform-browser-dynamic';
 
 // https://github.com/angular/angular/issues/15510#issuecomment-294860905
@@ -8,8 +7,6 @@ export function createJitCompiler(compilerFactory: CompilerFactory) {
   return compilerFactory.createCompiler();
 }
 
-@()
-@()
 @Directive()
 @Component({
   selector: 'eval-component',

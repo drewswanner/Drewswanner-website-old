@@ -1,13 +1,10 @@
-import { Component, Directive as  } from '@angular/core';
+import { Component, Directive  } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { Headers } from '@angular/http';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
-@()
-@()
 @Directive()
 @Component({
   selector: 'app-root',

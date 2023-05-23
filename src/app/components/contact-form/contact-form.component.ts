@@ -1,8 +1,6 @@
-import { Component, OnInit, Directive as  } from '@angular/core';
+import { Component, OnInit, Directive } from '@angular/core';
 import { WpService } from 'src/app/services/wp.service';
 
-@()
-@()
 @Directive()
 @Component({
   selector: 'contact-form',
